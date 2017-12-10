@@ -1,0 +1,15 @@
+language: java
+sudo: false
+jdk: oraclejdk8
+cache:
+  directories:
+  - "$HOME/.ivy2/cache"
+  - "$HOME/.m2"
+before_install:
+- chmod +x mvnw
+- chmod +x mvnw.cmd
+script:
+- "./mvnw clean install"
+- "./mvnw test"
+notifications:
+  email: false
